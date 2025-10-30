@@ -17,24 +17,39 @@
     <%
         Date now = new Date();
 
-        SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy년 M월 d일");
-        SimpleDateFormat timeFormatter = new SimpleDateFormat("h시 m분 ss초");
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy M d");
+        SimpleDateFormat timeFormatter = new SimpleDateFormat("h m ss");
 
-        String dateString = dateFormatter.format(now);
-        String timeString = timeFormatter.format(now);
         String dateString2 = request.getParameter("date");
         String timeString2 = request.getParameter("time");
 
+        String dateString = dateFormatter.format(now);
+        String timeString = timeFormatter.format(now);
+
         String result ="";
+        String text ="";
+        String datenumber[] = dateString.split(" ");
+        String timenumber[] = timeString.split(" ");
         if(timeString2 != null){
-            result = ("현재 시간 " +timeString);
+            text= "현재 시간";
+            result = (text +" <span class='font-weight-bold'>" +timenumber[0] +
+                    "</span>시 <span class='font-weight-bold'>" + timenumber[1] +
+                    "</span>분 <span class='font-weight-bold'>" + timenumber[2] +
+                    "</span>초 ");
         }
         else if(dateString2 != null){
-            result = ("오늘 날짜 " +dateString);
+            text= "오늘 날짜";
+            result = ("text + <span class='font-weight-bold'>" +datenumber[0] +
+                    "</span>년 <span class='font-weight-bold'>" + datenumber[1] +
+                    "</span>월 <span class='font-weight-bold'>" + datenumber[2] +
+                    "</span>일 ");
         }
     %>
 
-    <h1 class="font-weight-light"><%=result%></h1>
+    <div class="container">
+        <li class ="justify-content-start" ><%=text%></li>
+        <h1 class="font-weight-light"><%=result%></h1>
 
+    </div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <body>
     <%
         String menu = request.getParameter("menu");
-        String point = request.getParameter("point");
+        String filter = request.getParameter("filter");
 
         List<Map<String, Object>> list = new ArrayList<>();
         Map<String, Object> map = new HashMap<String, Object>() {{ put("name", "버거킹"); put("menu", "햄버거"); put("point", 4.3); }};
@@ -40,8 +40,8 @@
             </thead>
             <tbody>
             <%for(Map<String,Object> store:list){
-                if(menu.equals(store.get("menu"))&&point != null){
-                    if((double)store.get("point")>=4.0){%>
+                if(menu.equals(store.get("menu"))){
+                    if(filter == null || (double)store.get("point")>=4.0){%>
             <tr>
                 <td><%=store.get("menu")%></td>
                 <td><%=store.get("name")%></td>

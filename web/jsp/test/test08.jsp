@@ -62,11 +62,11 @@
         <%for(Map<String,Object> book:list){
             if(title.equals(book.get("title"))){%>
             <div class="d-flex">
-                <div class="col-6"><img src="<%= book.get("image") %>" alt="책 표지 "  class="w-50"></div>
-                <div>
+                <img src="<%= book.get("image") %>" alt="책 표지 " class="w-25">
+                <div class="col-6">
                     <h1><%=book.get("title")%></h1><br>
                     <h2 class="font-weight-light text-info"><%=book.get("author")%></h2><br>
-                    <h2 class="font-weight-light text-gray"><%=book.get("publisher")%></h2><br>
+                    <h2 class="font-weight-light text-secondary"><%=book.get("publisher")%></h2><br>
                 </div>
 
             </div>

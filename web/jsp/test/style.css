@@ -1,0 +1,32 @@
+#wrap{
+    height: 1200px;
+    width: 1200px;
+    margin: 0 auto ;
+}
+
+header{
+    height: 60px;
+}
+header > .search {
+    width: 400px;
+
+}
+nav{
+    height: 40px;
+}
+aside.artist-info {
+    display: flex;
+    border: 2px solid green;
+
+}
+
+aside.artist-info .artist-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+table{
+    height: 90px;
+}

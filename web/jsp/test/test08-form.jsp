@@ -57,7 +57,6 @@
 %>
 <div class="container">
     <h3 class="text-center mb-2">책 목록</h3>
-    <form method="post" action="/jsp/test/test08.jsp">
         <table class="table table-hover text-center">
             <thead>
             <tr>
@@ -79,8 +78,6 @@
 
             </tbody>
         </table>
-
-    </form>
 </div>
 
 </body>

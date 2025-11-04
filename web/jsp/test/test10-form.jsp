@@ -90,14 +90,14 @@
             <div class="d-flex align-items-center">
                 <h3 class="text-success ml-2 mr-4">Melong</h3>
             </div>
-            <div class="search d-flex justify-content-center align-items-center ml-4">
+            <form method="get" action="/jsp/test/test10.jsp" class="search d-flex justify-content-center align-items-center ml-4 mt-3">
                 <div class=" input-group ">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="title">
                     <div class="input-group-append">
-                        <button class="btn btn-info text-center" type="button">검색</button>
+                        <button class="btn btn-info text-center" type="submit">검색</button>
                     </div>
                 </div>
-            </div>
+            </form>
         </header>
         <nav class="mt-3">
             <ul class=" nav nav-start  font-weight-bold">
@@ -112,8 +112,8 @@
             <img src="<%= artistInfo.get("photo") %>" alt="아티스트 사진" class="align-items-center artist-photo mr-3">
             <div class="artist">
                 <h3><%= artistInfo.get("name") %></h3>
-                <h5><%= artistInfo.get("agency") %></h5>
-                <h5><%= artistInfo.get("debute") %> 데뷔</h5>
+                <h6><%= artistInfo.get("agency") %></h6>
+                <h6><%= artistInfo.get("debute") %> 데뷔</h6>
             </div>
         </aside>
 
@@ -130,7 +130,7 @@
                 <%for(Map<String,Object> music: musicList){%>
                 <tr>
                     <td class="col-2"><%=music.get("id")%></td>
-                    <td class="col-4"><a href="#"><%=music.get("title")%></a></td>
+                    <td class="col-4"><a href="/jsp/test/test10.jsp?title=<%=music.get("title")%>"><%=music.get("title")%></a></td>
                     <td class="col-6"><%=music.get("album")%></td>
                 </tr>
                 <%

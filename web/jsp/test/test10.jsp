@@ -12,6 +12,7 @@
 <body>
     <%
         String title = request.getParameter("title");
+        String id = request.getParameter("id");
 
         Map<String, Object> artistInfo = new HashMap<>();
         artistInfo.put("name", "아이유");
@@ -111,10 +112,11 @@
                 <li class="nav-item"><a href="#" class="nav-link text-dark ">뮤직어워드</a></li>
             </ul>
         </nav>
-        <aside class="artist-info d-flex mt-3 p-3 border border-success">
+        <aside class="artist-info d-flex mt-2 p-3 border border-success">
             <%
                 for (Map<String, Object> music : musicList) {
-                    if (title != null && title.equals(music.get("title"))) {
+                    if ((title != null && title.equals(music.get("title"))) ||
+                            (id != null && Integer.parseInt(id) == (Integer) music.get("id")))  {
             %>
             <div class="d-flex">
                 <img src="<%= music.get("thumbnail") %>" alt="아티스트 사진" class="align-items-center music-photo mr-3">

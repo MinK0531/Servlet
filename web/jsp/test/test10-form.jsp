@@ -108,7 +108,7 @@
                 <li class="nav-item"><a href="#" class="nav-link text-dark ">뮤직어워드</a></li>
             </ul>
         </nav>
-        <aside class="artist-info d-flex mt-3 p-3 border border-success">
+        <aside class="artist-info d-flex mt-2 p-3 border border-success">
             <img src="<%= artistInfo.get("photo") %>" alt="아티스트 사진" class="align-items-center artist-photo mr-3">
             <div class="artist">
                 <h3><%= artistInfo.get("name") %></h3>
@@ -130,7 +130,7 @@
                 <%for(Map<String,Object> music: musicList){%>
                 <tr>
                     <td class="col-2"><%=music.get("id")%></td>
-                    <td class="col-4"><a href="/jsp/test/test10.jsp?title=<%=music.get("title")%>"><%=music.get("title")%></a></td>
+                    <td class="col-4"><a href="/jsp/test/test10.jsp?id=<%=music.get("id")%>"><%=music.get("title")%></a></td>
                     <td class="col-6"><%=music.get("album")%></td>
                 </tr>
                 <%

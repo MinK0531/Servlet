@@ -1,0 +1,12 @@
+#wrap{
+    width: 1400px;
+    height: 1200px;
+    margin: 0 auto;
+}
+header{
+    height: 150px;
+    background-color: #000000;
+}
+nav{
+    height: 70px;
+}
